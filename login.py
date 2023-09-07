@@ -52,7 +52,7 @@ def main():
 					st.dataframe(clean_db)
 			else:
 				st.warning("Usuário ou senha incorretos")
-	elif choice == "Increver":
+	elif choice == "Inscrever":
 		st.subheader("Cria nova conta")
 		new_user = st.text_input("Usuário")
 		new_password = st.text_input("Senha",type='password')
