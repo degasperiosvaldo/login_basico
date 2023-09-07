@@ -32,7 +32,7 @@ def main():
 		st.subheader("Início")
 	elif choice == "Login":
 		st.subheader("Seção de login")
-		username = st.sidebar.text_input("User Name")
+		username = st.sidebar.text_input("Usuário")
 		password = st.sidebar.text_input("Password",type='password')
 		if st.sidebar.checkbox("Login"):
 			create_usertable()
@@ -42,16 +42,16 @@ def main():
 				st.success("Logged In as {}".format(username))
 				task = st.selectbox("Task",["Add Post","Analytics","Profiles"])
 				if task == "Add Post":
-					st.subheader("Add Your Post")
+					st.subheader("Adicione sua postagem")
 				elif task == "Analytics":
-					st.subheader("Analytics")
+					st.subheader("Análise")
 				elif task == "Profiles":
-					st.subheader("User Profiles")
+					st.subheader("Perfis de usuários")
 					user_result = view_all_users()
 					clean_db = pd.DataFrame(user_result,columns=["Username","Password"])
 					st.dataframe(clean_db)
 			else:
-				st.warning("Incorrect Username/Password")
+				st.warning("Usuário ou senha incorretos")
 	elif choice == "Increver":
 		st.subheader("Cria nova conta")
 		new_user = st.text_input("Usuário")
