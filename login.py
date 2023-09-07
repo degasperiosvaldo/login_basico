@@ -25,13 +25,13 @@ def view_all_users():
 	data = c.fetchall()
 	return data
 def main():
-	st.title("Simple Login App")
-	menu = ["Home","Login","SignUp"]
+	st.title("Entrada do Sistema ")
+	menu = ["Início","Login","Increver"]
 	choice = st.sidebar.selectbox("Menu",menu)
-	if choice == "Home":
-		st.subheader("Home")
+	if choice == "Início":
+		st.subheader("Início")
 	elif choice == "Login":
-		st.subheader("Login Section")
+		st.subheader("Seção de login")
 		username = st.sidebar.text_input("User Name")
 		password = st.sidebar.text_input("Password",type='password')
 		if st.sidebar.checkbox("Login"):
@@ -52,14 +52,14 @@ def main():
 					st.dataframe(clean_db)
 			else:
 				st.warning("Incorrect Username/Password")
-	elif choice == "SignUp":
-		st.subheader("Create New Account")
-		new_user = st.text_input("Username")
-		new_password = st.text_input("Password",type='password')
+	elif choice == "Increver":
+		st.subheader("Cria nova conta")
+		new_user = st.text_input("Usuário")
+		new_password = st.text_input("Senha",type='password')
 		if st.button("Signup"):
 			create_usertable()
 			add_userdata(new_user,make_hashes(new_password))
-			st.success("You have successfully created a valid Account")
-			st.info("Go to Login Menu to login")
+			st.success("Conta criada com sucesso.")
+			st.info("Volte para o Login")
 if __name__ == '__main__':
 	main()
