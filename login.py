@@ -26,7 +26,7 @@ def view_all_users():
 	return data
 def main():
 	st.title("Entrada do Sistema ")
-	menu = ["Início","Login","Increver"]
+	menu = ["Início","Login","Inscrever"]
 	choice = st.sidebar.selectbox("Menu",menu)
 	if choice == "Início":
 		st.subheader("Início")
